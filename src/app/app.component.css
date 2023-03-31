@@ -1,0 +1,82 @@
+:host{
+    min-width: 500px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 15px;
+}
+h1{
+    text-align: center;
+}
+input{
+    width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+input:focus{
+    outline:none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover{
+    background-color: #3e8e41;
+}
+
+.clear {
+    background-color: #f44336;
+}
+  
+.clear:hover {
+background-color: #d32f2f;
+}
+
+.todoList{
+    margin-top: 20px;
+    height: 40vh;
+    overflow-y: auto;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 20px;
+    border-radius: 20px 10px 10px 20px;
+}
+
+
+.todoList::-webkit-scrollbar {
+    width: 20px;
+ }
+  
+  /* Track */
+  .todoList::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  .todoList::-webkit-scrollbar-thumb {
+    background: #B7C4CF; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  .todoList::-webkit-scrollbar-thumb:hover {
+    background: #a4b3c0; 
+     
+  }
+

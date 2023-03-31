@@ -1,0 +1,50 @@
+:host{
+    display: flex;
+    justify-content: space-between;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  input[type="checkbox"] + label {
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  input[type="checkbox"] + label.finished {
+    text-decoration: wavy line-through;
+    color: #58e36d;
+    text-decoration-thickness: 2px;
+  }
+
+  button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 8px;
+  border-radius: 5px;
+  }
+  button:hover{
+    background-color: #41413f6e;
+    text-shadow: 0 0 5px #fff;
+  }
+
+.edit {
+    color: #2196f3;
+    margin-right: 10px;
+  }
+  
+.edit:hover {
+    color: #0d47a1;
+  }
+  
+.delete {
+    color: #f44336;
+  }
+  
+.delete:hover {
+    color: #d32f2f;
+  }
