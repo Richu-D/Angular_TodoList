@@ -1,8 +1,18 @@
 <div class="control">
-    <input type="checkbox" id="todo">
-    <label for="todo" class='finished'>todo</label>
+    <ng-container *ngIf="!editing">
+        <input type="checkbox" [defaultChecked]="todo.isFinished" [id]="todo.id" (change)="onCheckboxChange(todo.id)">
+        <label for="{{todo.id}}" [ngClass]="{finished:todo.isFinished}">{{todo.task}}</label>
+    </ng-container>
+    <div class="editingContainer">
+    <ng-container *ngIf="editing">
+        <input class="editing" type="text" [id]="todo.id" [ngModel]="todo.task" (ngModelChange)="todo.task=$event" (keyup.enter)="edit(todo.id,todo.task)">
+        <button (click)="edit(todo.id,todo.task)">Save</button>
+    </ng-container>
+</div>
 </div>
 <div class="action">
-<button class='edit'>Edit</button>
-<button class='delete'>delete</button>
+<ng-container *ngIf="!editing">
+    <button class='edit' (click)="editing = !editing">Edit</button>
+</ng-container>
+<button class='delete' (click)="delete(todo.id)">delete</button>
 </div>

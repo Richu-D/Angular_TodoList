@@ -1,29 +1,10 @@
 <h1>Todo List</h1>
-<input type="text">
+<input type="text" [(ngModel)]="text" (keyup.enter)="addTodo()">
 <div class="buttonContainer">
-    <button class="clear">Remove Finished</button>
-    <button>Add</button>
+    <button class="clear" (click)="removeAllFinishedTodo()">Remove Finished</button>
+    <button (click)="addTodo()">Add</button>
 </div>
+<p class="leftTodo">{{leftTodo()}}</p>
 <div class="todoList">
-    <app-todo></app-todo>
-    <app-todo></app-todo>
-    <app-todo></app-todo>
-    <app-todo></app-todo>
-    <app-todo></app-todo>
-    <app-todo></app-todo>
-    <app-todo></app-todo>
-    <app-todo></app-todo>
-    <app-todo></app-todo>
-    <app-todo></app-todo>
-    <app-todo></app-todo>
-    <app-todo></app-todo>
-    <app-todo></app-todo>
-    <app-todo></app-todo>
-    <app-todo></app-todo>
-    <app-todo></app-todo>
-    <app-todo></app-todo>
-    <app-todo></app-todo>
-    <app-todo></app-todo>
-    <app-todo></app-todo>
-    <app-todo></app-todo>
+    <app-todo *ngFor="let todo of todoList" [todo]="todo" (toggleFinish)="toggleFinish($event)" (deleteTodo)="deleteTodo($event)" (editTodo)="editTodo($event)"></app-todo>
 </div>
