@@ -5,14 +5,14 @@
     </ng-container>
     <div class="editingContainer">
     <ng-container *ngIf="editing">
-        <input class="editing" type="text" [id]="todo.id" [ngModel]="todo.task" (ngModelChange)="todo.task=$event" (keyup.enter)="edit(todo.id,todo.task)">
+        <input class="editing" type="text" [id]="todo.id" [ngModel]="todo.task" (ngModelChange)="todo.task=$event" (keyup.enter)="edit(todo.id,todo.task)"  #editpanal >
         <button (click)="edit(todo.id,todo.task)">Save</button>
     </ng-container>
 </div>
 </div>
 <div class="action">
 <ng-container *ngIf="!editing">
-    <button class='edit' (click)="editing = !editing">Edit</button>
+    <button class='edit' (click)="enableEdit()">Edit</button>
 </ng-container>
 <button class='delete' (click)="delete(todo.id)">delete</button>
 </div>

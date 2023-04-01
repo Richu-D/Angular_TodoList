@@ -1,4 +1,4 @@
-import { Component,EventEmitter,Input, Output } from '@angular/core';
+import { Component,ElementRef,EventEmitter,Input, Output, ViewChild } from '@angular/core';
 import { Task } from '../task.model';
 
 @Component({
@@ -11,6 +11,9 @@ export class TodoComponent {
 @Output() toggleFinish = new EventEmitter()
 @Output() deleteTodo = new EventEmitter()
 @Output() editTodo = new EventEmitter()
+
+@ViewChild('editpanal', { static: false }) editpanal: ElementRef<HTMLInputElement>|undefined;
+
 editing:boolean = false
 constructor(){}
 
@@ -24,5 +27,9 @@ delete(todoId:number){
 edit(todoId:number,task:string){
   this.editTodo.emit({todoId,task})
   this.editing = false;
+}
+enableEdit(){
+  this.editing = !this.editing;
+  setTimeout(()=>{this.editpanal?.nativeElement.focus()},0)
 }
 }
